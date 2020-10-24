@@ -1,0 +1,336 @@
+{
+  "locales": {
+    "London": {
+      "locate": {},
+      "view": {
+        "lat": 51.5887,
+        "lng": -0.10476,
+        "z": 13
+      },
+      "bounds": {
+        "north": 51.9,
+        "east": 0.7,
+        "south": 51,
+        "west": -0.9
+      },
+      "minZoom": 10,
+      "maxZoom": 18,
+      "maskBounds": true,
+      "gazetteer": {
+        "provider": "GOOGLE",
+        "code": "GB",
+        "placeholder": "e.g. N15 4SJ",
+        "bounds": "location=51.4,-0.1&radius=30000"
+      },
+      "layers": {
+        "Zoomstack": {
+          "display": true,
+          "attribution": {
+            "© Ordanance Survey": "https://ordnancesurvey.co.uk"
+          },
+          "format": "tiles",
+          "URI": "https://api.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/EPSG%3A3857/Light%203857/{z}/{x}/{y}.png?key=4vmpYY1uFdimsAkyGwuaFbbHEyfvA5Gy"
+        },
+        "OSM": {
+          "attribution": {
+            "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+          },
+          "format": "tiles",
+          "URI": "https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        },
+        "Mapbox Base": {
+          "format": "mbtiles",
+          "mbStyle": "mapbox://styles/dbauszus/ckffabng112e619o9bnfnrffu",
+          "accessToken": "pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tmem95NXR0MG1mcDJ0bTdpZWtvbWczYSJ9.jed0_YFQsDd0IcHQDU2ZQw",
+          "attribution": {
+            "© Mapbox": "https://www.mapbox.com/about/maps",
+            "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+          }
+        },
+        "Mapbox Colour": {
+          "format": "mbtiles",
+          "mbStyle": "mapbox://styles/dbauszus/ck440h6990nii1co520go20i2",
+          "accessToken": "pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tmem95NXR0MG1mcDJ0bTdpZWtvbWczYSJ9.jed0_YFQsDd0IcHQDU2ZQw",
+          "attribution": {
+            "© Mapbox": "https://www.mapbox.com/about/maps",
+            "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+          }
+        },
+        "Boroughs": {
+          "display": true,
+          "format": "mvt",
+          "dbs": "MAPP",
+          "__mvt_cache": "gla.boroughs__mvts",
+          "table": "gla.vw_london_glx_geodata_admin_lad_5m",
+          "geom": "geom_3857",
+          "srid": "3857",
+          "style": {
+            "default": {
+              "strokeWidth": 2,
+              "strokeColor": "#9e0059"
+            }
+          }
+        },
+        "Foodbanks": {
+          "display": true,
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "gla.foodbanks",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "qID": "id",
+          "cluster_label": "name",
+          "cluster_kmeans": 0.3,
+          "cluster_dbscan": 0.02,
+          "infoj": [{
+              "title": "Name",
+              "field": "name"
+            },
+            {
+              "title": "Type",
+              "field": "type"
+            },
+            {
+              "title": "Description",
+              "field": "description",
+              "type": "textarea"
+            },
+            {
+              "title": "Address",
+              "field": "address",
+              "type": "textarea"
+            },
+            {
+              "title": "EMail",
+              "field": "email"
+            },
+            {
+              "title": "Phone",
+              "field": "phone"
+            },
+            {
+              "title": "Website",
+              "field": "website"
+            },
+            {
+              "title": "Monday",
+              "field": "day_monday",
+              "inline": true
+            },
+            {
+              "title": "Tuesday",
+              "field": "day_tuesday",
+              "inline": true
+            },
+            {
+              "title": "Wednesday",
+              "field": "day_wednesday",
+              "inline": true
+            },
+            {
+              "title": "Thursday",
+              "field": "day_thursday",
+              "inline": true
+            },
+            {
+              "title": "Friday",
+              "field": "day_friday",
+              "inline": true
+            },
+            {
+              "title": "Saturday",
+              "field": "day_saturday",
+              "inline": true
+            },
+            {
+              "title": "Sunday",
+              "field": "day_sunday",
+              "inline": true
+            },
+            {
+              "field": "notes_opening",
+              "type": "textarea"
+            },
+            {
+              "title": "Voucher",
+              "field": "voucher",
+              "type": "boolean"
+            },
+            {
+              "field": "notes_voucher",
+              "type": "textarea"
+            },
+            {
+              "title": "Donations",
+              "field": "notes_donations",
+              "type": "textarea"
+            },
+            {
+              "title": "Notes",
+              "field": "notes",
+              "type": "textarea"
+            }
+          ],
+          "style": {
+            "default": {
+              "type": "dot",
+              "fillColor": "#333",
+              "scale": 1
+            },
+            "cluster": {
+              "type": "dot",
+              "fillColor": "#999",
+              "scale": 1.3
+            },
+            "themes": {
+              "Type": {
+                "type": "categorized",
+                "field": "type",
+                "other": true,
+                "cat": {
+                  "Foodbank": {
+                    "label": "Foodbank",
+                    "fillColor": "#8bc34a"
+                  },
+                  "Distribution Hub": {
+                    "label": "Distribution Hub",
+                    "fillColor": "#ff9800"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Foodbanks edit": {
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "gla.foodbanks",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "roles": {
+            "edit": null
+          },
+          "edit": {
+            "point": true,
+            "delete": true,
+            "geometry": true
+          },
+          "qID": "id",
+          "cluster_label": "name",
+          "cluster_kmeans": 0.3,
+          "cluster_dbscan": 0.02,
+          "infoj": [{
+              "title": "Name",
+              "field": "name",
+              "edit": true
+            },
+            {
+              "title": "Type",
+              "field": "type",
+              "edit": true
+            },
+            {
+              "title": "Description",
+              "field": "description",
+              "type": "textarea",
+              "edit": true
+            },
+            {
+              "title": "Address",
+              "field": "address",
+              "type": "textarea",
+              "edit": true
+            },
+            {
+              "title": "EMail",
+              "field": "email",
+              "edit": true
+            },
+            {
+              "title": "Phone",
+              "field": "phone",
+              "edit": true
+            },
+            {
+              "title": "Website",
+              "field": "website",
+              "edit": true
+            },
+            {
+              "title": "Monday",
+              "field": "day_monday",
+              "inline": true,
+              "edit": true
+            },
+            {
+              "title": "Tuesday",
+              "field": "day_tuesday",
+              "inline": true,
+              "edit": true
+            },
+            {
+              "title": "Wednesday",
+              "field": "day_wednesday",
+              "inline": true,
+              "edit": true
+            },
+            {
+              "title": "Thursday",
+              "field": "day_thursday",
+              "inline": true,
+              "edit": true
+            },
+            {
+              "title": "Friday",
+              "field": "day_friday",
+              "inline": true,
+              "edit": true
+            },
+            {
+              "title": "Saturday",
+              "field": "day_saturday",
+              "inline": true,
+              "edit": true
+            },
+            {
+              "title": "Sunday",
+              "field": "day_sunday",
+              "inline": true,
+              "edit": true
+            },
+            {
+              "title": "Notes on opening hours",
+              "field": "notes_opening",
+              "type": "textarea",
+              "edit": true
+            },
+            {
+              "title": "Voucher",
+              "field": "voucher",
+              "type": "boolean",
+              "edit": true
+            },
+            {
+              "title": "Notes on voucher",
+              "field": "notes_voucher",
+              "type": "textarea",
+              "edit": true
+            },
+            {
+              "title": "Donations",
+              "field": "notes_donations",
+              "type": "textarea",
+              "edit": true
+            },
+            {
+              "title": "Notes",
+              "field": "notes",
+              "type": "textarea",
+              "edit": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}
