@@ -82,17 +82,27 @@
           "cluster_label": "name",
           "cluster_kmeans": 0.3,
           "cluster_dbscan": 0.02,
-          "infoj": [{
-              "title": "Name",
+          "infoj": [
+            {
+              "css_val": "font-weight: bold;",
               "field": "name"
             },
             {
-              "title": "Type",
-              "field": "type"
+              "field": "description",
+              "type": "textarea"
             },
             {
-              "title": "Description",
-              "field": "description",
+              "title": "Type",
+              "field": "type",
+              "inline": true
+            },
+            {
+              "field": "type_notes",
+              "inline": true
+            },
+            {
+              "title": "Food",
+              "field": "food",
               "type": "textarea"
             },
             {
@@ -101,16 +111,33 @@
               "type": "textarea"
             },
             {
-              "title": "EMail",
+              "title": "Postcode",
+              "field": "postcode",
+              "inline": true
+            },
+            {
+              "title": "Contact",
+              "type": "title"
+            },
+            {
+              "field": "contact_name"
+            },
+            {
               "field": "email"
             },
             {
-              "title": "Phone",
               "field": "phone"
+            },
+            {
+              "field": "contact_notes"
             },
             {
               "title": "Website",
               "field": "website"
+            },
+            {
+              "title": "Opening Times",
+              "type": "title"
             },
             {
               "title": "Monday",
@@ -152,8 +179,8 @@
               "type": "textarea"
             },
             {
-              "title": "Voucher",
               "field": "voucher",
+              "name": "Voucher",
               "type": "boolean"
             },
             {
@@ -161,7 +188,20 @@
               "type": "textarea"
             },
             {
-              "title": "Donations",
+              "field": "deliveries",
+              "name": "Deliveries",
+              "type": "boolean"
+            },
+            {
+              "field": "notes_deliveries",
+              "type": "textarea"
+            },
+            {
+              "field": "donations",
+              "name": "Donations",
+              "type": "boolean"
+            },
+            {
               "field": "notes_donations",
               "type": "textarea"
             },
@@ -182,21 +222,49 @@
               "fillColor": "#999",
               "scale": 1.3
             },
-            "themes": {
-              "Type": {
+            "theme": {
                 "type": "categorized",
                 "field": "type",
                 "other": true,
                 "cat": {
                   "Foodbank": {
                     "label": "Foodbank",
-                    "fillColor": "#8bc34a"
+                    "fillColor": "#ffc107"
+                  },
+                  "Food supplies": {
+                    "label": "Food supplies",
+                    "fillColor": "#ff9800"
+                  },
+                  "Meals": {
+                    "label": "Meals",
+                    "fillColor": "#03a9f4"
+                  },
+                  "Foodbank and Meals": {
+                    "label": "Foodbank and Meals",
+                    "type": "target",
+                    "fillColor": "#ffc107",
+                    "layers": {
+                        "0.75": "#ffffff",
+                        "0.35": "#03a9f4"
+                    }
+                  },
+                  "Food supplies and Meals": {
+                    "label": "Food supplies and Meals",
+                    "type": "target",
+                    "fillColor": "#ff9800",
+                    "layers": {
+                        "0.75": "#ffffff",
+                        "0.35": "#03a9f4"
+                    }
+                  },
+                  "Food deliveries": {
+                    "label": "Food deliveries",
+                    "fillColor": "#cddc39"
                   },
                   "Distribution Hub": {
                     "label": "Distribution Hub",
-                    "fillColor": "#ff9800"
+                    "fillColor": "#9c27b0"
                   }
-                }
               }
             }
           }
@@ -219,19 +287,42 @@
           "cluster_label": "name",
           "cluster_kmeans": 0.3,
           "cluster_dbscan": 0.02,
-          "infoj": [{
-              "title": "Name",
+          "infoj": [
+            {
+              "title": "Type",
+              "field": "type",
+              "edit": {
+                "options": [
+                  "",
+                  "Meals",
+                  "Distribution Hub",
+                  "Food supplies",
+                  "Foodbank",
+                  "Food deliveries",
+                  "Foodbank and Meals",
+                  "Food supplies and Meals"
+                ]
+              }
+            },
+            {
+              "title": "Type Notes",
+              "field": "type_notes",
+              "edit": true
+            },
+            {
+              "title": "Organisation",
               "field": "name",
               "edit": true
             },
             {
-              "title": "Type",
-              "field": "type",
+              "title": "About",
+              "field": "description",
+              "type": "textarea",
               "edit": true
             },
             {
-              "title": "Description",
-              "field": "description",
+              "title": "Food",
+              "field": "food",
               "type": "textarea",
               "edit": true
             },
@@ -239,6 +330,21 @@
               "title": "Address",
               "field": "address",
               "type": "textarea",
+              "edit": true
+            },
+            {
+              "title": "Postcode",
+              "field": "postcode",
+              "edit": true,
+              "inline": true
+            },
+            {
+              "title": "Contact",
+              "type": "title"
+            },
+            {
+              "title": "Name",
+              "field": "contact_name",
               "edit": true
             },
             {
@@ -252,9 +358,19 @@
               "edit": true
             },
             {
+              "title": "Notes",
+              "field": "contact_notes",
+              "edit": true,
+              "type": "textarea"
+            },
+            {
               "title": "Website",
               "field": "website",
               "edit": true
+            },
+            {
+              "title": "Opening Times",
+              "type": "title"
             },
             {
               "title": "Monday",
@@ -305,19 +421,34 @@
               "edit": true
             },
             {
-              "title": "Voucher",
               "field": "voucher",
+              "name": "Voucher",
               "type": "boolean",
               "edit": true
             },
             {
-              "title": "Notes on voucher",
               "field": "notes_voucher",
               "type": "textarea",
               "edit": true
             },
             {
-              "title": "Donations",
+              "field": "deliveries",
+              "name": "Deliveries",
+              "type": "boolean",
+              "edit": true
+            },
+            {
+              "field": "notes_deliveries",
+              "type": "textarea",
+              "edit": true
+            },
+            {
+              "field": "donations",
+              "name": "Donations",
+              "type": "boolean",
+              "edit": true
+            },
+            {
               "field": "notes_donations",
               "type": "textarea",
               "edit": true
@@ -327,8 +458,71 @@
               "field": "notes",
               "type": "textarea",
               "edit": true
+            },
+            {
+              "title": "Feedback (not visible to public)",
+              "field": "feedback",
+              "type": "textarea",
+              "edit": true
             }
-          ]
+          ],
+          "style": {
+            "default": {
+              "type": "dot",
+              "fillColor": "#333",
+              "scale": 1
+            },
+            "cluster": {
+              "type": "dot",
+              "fillColor": "#999",
+              "scale": 1.3
+            },
+            "theme": {
+                "type": "categorized",
+                "field": "type",
+                "other": true,
+                "cat": {
+                  "Foodbank": {
+                    "label": "Foodbank",
+                    "fillColor": "#ffc107"
+                  },
+                  "Food supplies": {
+                    "label": "Food supplies",
+                    "fillColor": "#ff9800"
+                  },
+                  "Meals": {
+                    "label": "Meals",
+                    "fillColor": "#03a9f4"
+                  },
+                  "Foodbank and Meals": {
+                    "label": "Foodbank and Meals",
+                    "type": "target",
+                    "fillColor": "#ffc107",
+                    "layers": {
+                        "0.75": "#ffffff",
+                        "0.35": "#03a9f4"
+                    }
+                  },
+                  "Food supplies and Meals": {
+                    "label": "Food supplies and Meals",
+                    "type": "target",
+                    "fillColor": "#ff9800",
+                    "layers": {
+                        "0.75": "#ffffff",
+                        "0.35": "#03a9f4"
+                    }
+                  },
+                  "Food deliveries": {
+                    "label": "Food deliveries",
+                    "fillColor": "#cddc39"
+                  },
+                  "Distribution Hub": {
+                    "label": "Distribution Hub",
+                    "fillColor": "#9c27b0"
+                  }
+              }
+            }
+          }
         }
       }
     }
